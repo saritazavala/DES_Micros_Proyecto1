@@ -16,7 +16,7 @@ Renato Estrada
 
 using namespace std;
 int counter = 0;
-
+//VARIABLES GLOBALES
 string text;
 vector<string> parser;
 vector<string> keys;
@@ -30,6 +30,7 @@ void writeFile(string text) {
 	write << text;
 
 }
+//cambiar bits a la derecha
 string shiftleft(string lado) {
     string nlado;
     for (int i = 1; i <= 27; i++) {
@@ -39,6 +40,7 @@ string shiftleft(string lado) {
     nlado = nlado + "0";
     return nlado;
 }
+//Generador de llaves
 vector<string> keyGenerator(string iniStr) {
     int KeyC[48] = {14, 17, 11, 24, 1, 5, 3, 28,
         15, 6, 21, 10, 23, 19, 12, 4,
@@ -76,6 +78,7 @@ vector<string> keyGenerator(string iniStr) {
     }
     return llaves;
 }
+//Funcion string a binario
 string strtobin(string iniStr) {
     string bitstr = "";
     for (int i = 0; i < iniStr.length(); i++) {
@@ -86,6 +89,7 @@ string strtobin(string iniStr) {
     return bitstr;
 }
 
+//leer un archivo
 void readFile(){
     string temp_text;
     ifstream readText("./cifrado.txt",ios::in);
@@ -101,6 +105,7 @@ void readFile(){
     }
     
 }
+//dividir palabra para separarlo en bits
 vector<string> divide() {
     vector<string> all8letterwords;
     string current = "";
@@ -122,7 +127,7 @@ vector<string> divide() {
     return all8letterwords;
 }
 
-
+//Binario a decimal
 int binaryToDecimal(string n)
 {
     string num = n;
