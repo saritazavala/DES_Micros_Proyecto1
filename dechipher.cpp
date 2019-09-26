@@ -8,6 +8,11 @@
 #include <cmath>
 #include<vector>
 #include <fstream>
+/*
+Ricardo Valenzuela
+Maria Jose Castro
+Renato Estrada
+*/
 
 using namespace std;
 int counter = 0;
