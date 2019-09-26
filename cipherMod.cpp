@@ -175,6 +175,7 @@ string toBinary(int n)
     while(n!=0) {r=(n%2==0 ?"0":"1")+r; n/=2;}
     return r;
 }
+//Obtener S1
 string s1(string row, string column)
 {
     int s1Matrix[4][16] = {
@@ -206,7 +207,8 @@ string s1(string row, string column)
     return result;
     
 }
-
+//FUNCION XOR PARA EL CIFRADO Y LAS RONDAS DE 
+//CADA UNA DE LS PERMUTACIONES
 string XOR(string a, string  b)
 {
     
@@ -228,7 +230,7 @@ string XOR(string a, string  b)
     }
     
 }
-
+//GET de la fila S1
 int getS1Row(string text)
 {
     
@@ -241,7 +243,7 @@ int getS1Row(string text)
     result = binaryToDecimal(row);
     return result;
 }
-
+//GET coumna 1
 int getS1Column(string text)
 {
     string column;
@@ -254,7 +256,7 @@ int getS1Column(string text)
     return result;
 }
 
-
+//Permutacion
 string straightPermutate(string s1bit32Word)
 {
     counter++;
@@ -269,7 +271,7 @@ string straightPermutate(string s1bit32Word)
     return permutateds1Bit32Word;
     
 }
-
+//FUNCION PRINCIPAL DES PARA LA ENCRIPTACION
 string DES(string bit32Right, string bitKey48)
 {
     string bit48Word;
@@ -302,7 +304,7 @@ string DES(string bit32Right, string bitKey48)
         }
     }
     
-    
+    //Cambiar palabra a bits (48)
     string tempBit48Word = bit48Word;
     bit48Word = "";
     for (int i = 0; i < 48; i++) {
@@ -397,7 +399,7 @@ string finper(string cift)
     return ultima;
 }
 
-
+//FUNCION PARA LAS RONDAS FEISTEL 64 BITS
 
 string feistelRounds(string bit64Word, vector<string> keys){
     string left32Bits;
