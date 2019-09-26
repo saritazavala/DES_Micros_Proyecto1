@@ -8,13 +8,20 @@
 #include <cmath>
 #include<vector>
 #include <fstream>
+/*
+Amado Garcia 181469
+Sara Zavala 18893
+Proyecto 1: Encriptador DES
+26/09/2019
+*/
 
 using namespace std;
 int counter = 0;
-
+//variables globales
 string text;
 vector<string> parser;
 vector<string> keys;
+//Funcion para escribir sobre un archivo txt
 void writeFile(string text) {
 	int counter = 1;
 	// ofstream writePrimes("primes.txt", ios::out);
@@ -26,6 +33,7 @@ void writeFile(string text) {
 	write << text;
 
 }
+//Cambiar el orden de bits a la izquierda
 string shiftleft(string lado) {
     string nlado;
     for (int i = 1; i <= 27; i++) {
@@ -35,6 +43,7 @@ string shiftleft(string lado) {
     nlado = nlado + "0";
     return nlado;
 }
+//Generador de llaves para todas las rondas necesarias
 vector<string> keyGenerator(string iniStr) {
     int KeyC[48] = {14, 17, 11, 24, 1, 5, 3, 28,
         15, 6, 21, 10, 23, 19, 12, 4,
@@ -72,6 +81,7 @@ vector<string> keyGenerator(string iniStr) {
     }
     return llaves;
 }
+//Funcion de string a binario
 string strtobin(string iniStr) {
     string bitstr = "";
     for (int i = 0; i < iniStr.length(); i++) {
@@ -82,6 +92,7 @@ string strtobin(string iniStr) {
     return bitstr;
 }
 
+//Funcion para leer un txt
 void readFile(){
     string temp_text;
     ifstream readText("./FUENTE.txt",ios::in);
@@ -97,6 +108,7 @@ void readFile(){
     }
     
 }
+//Dividir las palabras en bits
 vector<string> divide() {
     vector<string> all8letterwords;
     string current = "";
@@ -118,7 +130,7 @@ vector<string> divide() {
     return all8letterwords;
 }
 
-
+//Funcion binario a Decimal
 int binaryToDecimal(string n)
 {
     string num = n;
@@ -137,6 +149,7 @@ int binaryToDecimal(string n)
     
     return dec_value;
 }
+//Binario a String
 string bintostr(string iniStr)
 {
     string normalstr = "";
@@ -155,6 +168,7 @@ string bintostr(string iniStr)
     return normalstr;
 }
 
+//Funcion para convertir a binario
 string toBinary(int n)
 {
     string r;
